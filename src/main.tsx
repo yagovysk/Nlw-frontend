@@ -8,12 +8,17 @@ import { Toaster } from "sonner";
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById("root")!).render(
-	<StrictMode>
-		<QueryClientProvider client={queryClient}>
-			<App />
+const rootElement = document.getElementById("root");
 
-			<Toaster position="bottom-left" richColors />
-		</QueryClientProvider>
-	</StrictMode>,
-);
+if (rootElement) {
+	createRoot(rootElement).render(
+		<StrictMode>
+			<QueryClientProvider client={queryClient}>
+				<App />
+				<Toaster position="bottom-left" richColors />
+			</QueryClientProvider>
+		</StrictMode>,
+	);
+} else {
+	console.error("Elemento 'root' não encontrado no DOM.");
+}

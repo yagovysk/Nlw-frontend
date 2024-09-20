@@ -6,7 +6,7 @@ import { Progress, ProgressIndicator } from "./ui/progress-bar";
 import { Separator } from "./ui/separator";
 import type { GetSummaryResponse } from "../http/get-summary";
 import dayjs from "dayjs";
-import ptBR from "dayjs/locale/pt-br";
+import ptBR from "dayjs/locale/pt-br.js";
 import { PendingGoals } from "./pending-goals";
 
 dayjs.locale(ptBR);
