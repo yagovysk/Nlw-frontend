@@ -7,7 +7,7 @@ export async function createGoal({
 	title,
 	desiredWeeklyFrequency,
 }: CreateGoalRequest): Promise<void> {
-	const response = await fetch("http://localhost:3333/goals", {
+	const response = await fetch("https://nlw-backend-sigma.vercel.app/goals", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
