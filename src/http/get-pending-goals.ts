@@ -8,7 +8,8 @@ export interface GetPendingGoalsResponse {
 }
 
 export async function getPendingGoals(): Promise<GetPendingGoalsResponse> {
-	const serverUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:3333";
+	const serverUrl =
+		process.env.REACT_APP_SERVER_URL || "http://0.tcp.ngrok.io:17955";
 	const response = await fetch(`${serverUrl}/pending-goals`);
 	const data = await response.json();
 
