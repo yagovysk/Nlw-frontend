@@ -14,7 +14,8 @@ export interface GetSummaryResponse {
 }
 
 export async function getSummary(): Promise<GetSummaryResponse> {
-	const response = await fetch("https://nlw-backend-sigma.vercel.app/summary");
+	const serverUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:3333";
+	const response = await fetch(`${serverUrl}/summary`);
 	const data = await response.json();
 
 	return data;
