@@ -109,6 +109,7 @@ export function CreateGoal() {
 								name="desiredWeeklyFrequency"
 								defaultValue={5}
 								render={({ field }) => {
+									const emoticons = ["😴", "😌", "🙂", "😊", "😃", "😎", "💪"];
 									return (
 										<RadioGroup
 											value={String(field.value)}
@@ -116,6 +117,7 @@ export function CreateGoal() {
 										>
 											{Array.from({ length: 7 }).map((_, i) => {
 												const frequency = String(i + 1);
+												const emoticon = emoticons[i];
 
 												return (
 													<RadioGroupItem key={frequency} value={frequency}>
@@ -123,7 +125,9 @@ export function CreateGoal() {
 														<span className="text-zinc-300 text-sm font-medium leading-none">
 															{frequency}x na semana
 														</span>
-														<span className="text-lg leading-none">🥱</span>
+														<span className="text-lg leading-none">
+															{emoticon}
+														</span>
 													</RadioGroupItem>
 												);
 											})}
